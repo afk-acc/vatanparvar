@@ -1,0 +1,163 @@
+$after_c: #2595e7;
+
+header {
+    height: 120px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 10px;
+    > .left_side {
+        display: inline-flex;
+        align-items: center;
+        > p {
+            margin-left: 10px;
+            width: 300px;
+            display: inline-block;
+        }
+    }
+    > .center {
+        > ul {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            // align-items: center;
+            height: 120px;
+            // margin-top: 150px;
+            width: 700px;
+            transition: all 0.6s ease-in-out;
+            list-style: none;
+            list-style-type: none;
+            list-style-image: none;
+            > li:hover .hide_block {
+                // display: block;
+                opacity: 1;
+                visibility: visible;
+                transform: scaleY(1);
+            }
+            > li {
+                position: relative;
+                > a {
+                    color: #333333;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    transition: all 0.2s ease-in-out;
+                    line-height: 18px;
+                    // transition: all 0.6s ease-in-out;
+                    // padding-bottom: 150px;
+                    // height: 100px;
+                }
+
+                .hov:hover {
+                    font-weight: bold;
+                    line-height: 18px;
+                }
+                ._after::after {
+                    content: "";
+                    display: block;
+                    width: 30px;
+                    height: 1px;
+                    background: $after_c;
+                    top: 50px;
+                    transform: rotate(90deg);
+                    position: absolute;
+                    left: 55px;
+                    top: 10px;
+                }
+            }
+            li:nth-child(2) > ._after::after,
+            li:nth-child(4) > ._after::after {
+                left: 110px;
+            }
+            li:nth-child(3) > ._after::after,
+            li:nth-child(5) > ._after::after {
+                left: 80px;
+            }
+        }
+    }
+    > .right_side {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        > .lang {
+            position: relative;
+            transition: all 0.2s ease-in-out;
+            list-style: none;
+            > li {
+                cursor: pointer;
+                > p {
+                    position: relative;
+                    margin-right: 50px;
+                }
+                > ._after::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    background: $after_c;
+                    height: 40px;
+                    position: absolute;
+                    left: 50px;
+                    top: -10px;
+                }
+
+                > .hide {
+                    list-style: none;
+                    display: none;
+                    position: absolute;
+                    top: 30px;
+                    left: 10px;
+                    opacity: 0;
+                    transform-origin: 0 0;
+                    transform: scaleY(0);
+                    visibility: hidden;
+                    transition: all 0.2s ease-in-out;
+                }
+            }
+            > li:hover > .hide {
+                opacity: 1;
+                display: block;
+                transform: scaleY(1);
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.hide_block {
+    // display: block;
+    position: absolute;
+    // display: none;
+    // padding-top: 30px;
+    list-style: none;
+    // margin-top: 200px;
+    top: 30px;
+    left: -10px;
+    background-color: #fff;
+    width: 200px;
+    padding: 0;
+    z-index: 1;
+    // padding-top: 100px;
+    // box-sizing: content-box;
+    // padding: 10px 10px 10px 10px;
+    transform-origin: 0 0;
+    transform: scaleY(0);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s ease-in-out;
+    > li {
+        padding: 10px;
+        > a {
+            // flex: 1 1 100%;
+            color: #555555;
+            text-decoration: none;
+            transition: all 0.6s ease-in-out;
+            font-size: 20px;
+            z-index: 0;
+        }
+    }
+}
+
+// .sub_menu:hover > .hide_block {
+//     // transform: scaleY(1);
+//     // opacity: 1;
+//     // visibility: visible;
+//     display: block;
+// }
